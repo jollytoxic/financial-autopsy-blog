@@ -1,0 +1,356 @@
+/* Broadcom Analyst Blog - Corporate Equity Research Styling */
+:root {
+  --avgo-red: #CC092F;
+  --avgo-red-hover: #A60726;
+  --avgo-red-light: #FEE2E2;
+  --avgo-red-subtle: #FFF1F2;
+  --avgo-navy: #0F172A;
+  --avgo-slate-dark: #1E293B;
+  --avgo-slate: #334155;
+  --avgo-slate-light: #64748B;
+  --avgo-border: #E2E8F0;
+  --avgo-bg-subtle: #F8FAFC;
+  --avgo-card-bg: #FFFFFF;
+  --avgo-green: #059669;
+  --avgo-green-light: #D1FAE5;
+  --avgo-amber: #D97706;
+  --avgo-amber-light: #FEF3C7;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Roboto Mono', Menlo, Monaco, Consolas, monospace;
+}
+
+/* Base resets & typography */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #F8FAFC;
+  color: #1E293B;
+  line-height: 1.65;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Financial Mono Figures */
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+/* Smooth Transitions */
+.transition-smooth {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Ticker marquee animation */
+@keyframes tickerSlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: tickerSlide 45s linear infinite;
+}
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+/* Reading Progress Bar */
+#reading-progress {
+  height: 3px;
+  background: linear-gradient(90deg, #CC092F, #E11D48);
+  width: 0%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: width 0.1s ease-out;
+}
+
+/* Financial Callout Card */
+.analyst-callout {
+  border-left: 4px solid var(--avgo-red);
+  background: #FFF1F2;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  margin: 1.5rem 0;
+}
+
+.analyst-callout.bull {
+  border-left-color: var(--avgo-green);
+  background: #ECFDF5;
+}
+
+.analyst-callout.bear {
+  border-left-color: #EF4444;
+  background: #FEF2F2;
+}
+
+.analyst-callout.neutral {
+  border-left-color: #3B82F6;
+  background: #EFF6FF;
+}
+
+/* Media Placeholder Containers */
+.media-placeholder-box {
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  border: 2px dashed #475569;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.chart-placeholder-box {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border-radius: 0.75rem;
+}
+
+/* Badges */
+.badge-buy {
+  background-color: #D1FAE5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
+}
+.badge-tech {
+  background-color: #EFF6FF;
+  color: #1E40AF;
+  border: 1px solid #BFDBFE;
+}
+.badge-valuation {
+  background-color: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #FDE68A;
+}
+
+/* Article Typography */
+.article-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-top: 2rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.article-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1E293B;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.article-content p {
+  margin-bottom: 1.25rem;
+  color: #334155;
+  line-height: 1.75;
+}
+
+.article-content ul, .article-content ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+  color: #334155;
+}
+
+.article-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.65;
+}
+
+/* Data Tables */
+.financial-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.875rem;
+}
+.financial-table th {
+  background-color: #0F172A;
+  color: #FFFFFF;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
+}
+.financial-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #E2E8F0;
+  color: #334155;
+}
+.financial-table tr:nth-child(even) {
+  background-color: #F8FAFC;
+}
+.financial-table tr:hover {
+  background-color: #F1F5F9;
+}
+
+/* Table scroll wrapper — JS adds this around all .financial-table elements */
+.table-scroll-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+  border: 1px solid #E2E8F0;
+  border-radius: 0.5rem;
+  background: #FFFFFF;
+}
+.table-scroll-wrapper .financial-table {
+  margin: 0;
+  min-width: 520px;
+  width: 100%;
+}
+
+/* Reader font-size system using CSS variables (works on ALL containers and modes) */
+:root {
+  --reader-font-size: 1rem;
+  --reader-line-height: 1.75;
+  --reader-h2-size: 1.5rem;
+  --reader-h3-size: 1.2rem;
+}
+
+body.text-size-sm {
+  --reader-font-size: 0.875rem;
+  --reader-line-height: 1.65;
+  --reader-h2-size: 1.3rem;
+  --reader-h3-size: 1.1rem;
+}
+body.text-size-md {
+  --reader-font-size: 1rem;
+  --reader-line-height: 1.75;
+  --reader-h2-size: 1.5rem;
+  --reader-h3-size: 1.2rem;
+}
+body.text-size-lg {
+  --reader-font-size: 1.15rem;
+  --reader-line-height: 1.85;
+  --reader-h2-size: 1.75rem;
+  --reader-h3-size: 1.35rem;
+}
+
+.article-content p,
+.article-content li {
+  font-size: var(--reader-font-size) !important;
+  line-height: var(--reader-line-height) !important;
+}
+.article-content td {
+  font-size: calc(var(--reader-font-size) * 0.9) !important;
+}
+.article-content h2 {
+  font-size: var(--reader-h2-size) !important;
+}
+.article-content h3 {
+  font-size: var(--reader-h3-size) !important;
+}
+
+/* Ensure no child container causes horizontal scroll */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+  position: relative;
+}
+
+#scroll-articles-container,
+#view-scroll,
+#view-article,
+#view-home,
+#view-ux-rationale,
+#view-about,
+main,
+header,
+article {
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Mobile responsive overrides */
+@media (max-width: 767px) {
+  .financial-table th,
+  .financial-table td {
+    padding: 0.5rem 0.625rem;
+    font-size: 0.75rem !important;
+  }
+
+  .analyst-callout {
+    padding: 0.875rem 1rem;
+    margin: 1rem 0;
+  }
+
+  .chart-placeholder-box {
+    padding: 0.75rem !important;
+  }
+
+  .media-placeholder-box {
+    padding: 1rem !important;
+  }
+
+  /* Prevent network diagrams and mock graphics from overflowing */
+  .network-topology-diagram {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+}
+
+/* Team Edit Mode & Notification styling */
+.edit-mode-active {
+  outline: 2px dashed #CC092F;
+  outline-offset: 4px;
+}
+
+.toast-notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive adjustment for print & academic grading */
+@media print {
+  header, #ticker-bar, .no-print, #team-editor-modal, #team-edit-fab {
+    display: none !important;
+  }
+  body {
+    background: #FFF;
+    color: #000;
+  }
+  .article-content {
+    max-width: 100% !important;
+  }
+}

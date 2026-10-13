@@ -1,0 +1,207 @@
+media:
+  input: images
+  output: /images
+
+content:
+  - name: designed
+    label: "Articles (designed)"
+    type: collection
+    path: content/articles-html
+    format: json
+    view:
+      fields: [title, date, published]
+      primary: title
+      sort: [order, title]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: "Title"
+        type: string
+        required: true
+      - name: published
+        label: "Published (untick to hide)"
+        type: boolean
+        default: true
+      - name: order
+        label: "Order on home page (1 = first)"
+        type: number
+      - name: id
+        label: "ID (post-1, post-2 ... must be unique)"
+        type: string
+        required: true
+      - name: slug
+        label: "Slug"
+        type: string
+      - name: subtitle
+        label: "Subtitle"
+        type: text
+      - name: summary
+        label: "Summary (shown on home page card)"
+        type: text
+      - name: category
+        label: "Category"
+        type: string
+      - name: tag
+        label: "Tag"
+        type: string
+      - name: tagColor
+        label: "Tag colour"
+        type: select
+        options:
+          values:
+            - name: "bg-red-100 text-red-800 border-red-200"
+              label: "Red"
+            - name: "bg-blue-100 text-blue-800 border-blue-200"
+              label: "Blue"
+            - name: "bg-emerald-100 text-emerald-800 border-emerald-200"
+              label: "Green"
+            - name: "bg-green-100 text-green-800 border-green-200"
+              label: "Green (light)"
+            - name: "bg-amber-100 text-amber-800 border-amber-200"
+              label: "Amber"
+            - name: "bg-slate-100 text-slate-800 border-slate-200"
+              label: "Grey"
+      - name: date
+        label: "Date"
+        type: string
+      - name: readingTime
+        label: "Reading time"
+        type: string
+      - name: authorName
+        label: "Author name"
+        type: string
+        default: "Julian Lim, CFA"
+      - name: authorRole
+        label: "Author role"
+        type: string
+        default: "Senior Investment Analyst"
+      - name: authorAvatar
+        label: "Author initials"
+        type: string
+        default: "JL"
+      - name: ticker
+        label: "Ticker"
+        type: string
+      - name: rating
+        label: "Rating"
+        type: string
+      - name: targetPrice
+        label: "Target price"
+        type: string
+      - name: currentPrice
+        label: "Current price"
+        type: string
+      - name: upside
+        label: "Upside"
+        type: string
+      - name: horizon
+        label: "Horizon"
+        type: string
+      - name: content
+        label: "Article body (HTML: only change the words between tags)"
+        type: code
+        options:
+          format: html
+
+  - name: articles
+    label: "New articles (simple editor)"
+    type: collection
+    path: content/articles
+    format: json
+    view:
+      fields: [title, date, published]
+      primary: title
+      sort: [order, title]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: "Title"
+        type: string
+        required: true
+      - name: published
+        label: "Published (untick to hide)"
+        type: boolean
+        default: true
+      - name: order
+        label: "Order on home page (1 = first)"
+        type: number
+      - name: id
+        label: "ID (optional, leave blank to auto-generate)"
+        type: string
+      - name: slug
+        label: "Slug"
+        type: string
+      - name: subtitle
+        label: "Subtitle"
+        type: text
+      - name: summary
+        label: "Summary (shown on home page card)"
+        type: text
+      - name: category
+        label: "Category"
+        type: string
+      - name: tag
+        label: "Tag"
+        type: string
+      - name: tagColor
+        label: "Tag colour"
+        type: select
+        options:
+          values:
+            - name: "bg-red-100 text-red-800 border-red-200"
+              label: "Red"
+            - name: "bg-blue-100 text-blue-800 border-blue-200"
+              label: "Blue"
+            - name: "bg-emerald-100 text-emerald-800 border-emerald-200"
+              label: "Green"
+            - name: "bg-green-100 text-green-800 border-green-200"
+              label: "Green (light)"
+            - name: "bg-amber-100 text-amber-800 border-amber-200"
+              label: "Amber"
+            - name: "bg-slate-100 text-slate-800 border-slate-200"
+              label: "Grey"
+      - name: date
+        label: "Date"
+        type: string
+      - name: readingTime
+        label: "Reading time"
+        type: string
+      - name: authorName
+        label: "Author name"
+        type: string
+        default: "Julian Lim, CFA"
+      - name: authorRole
+        label: "Author role"
+        type: string
+        default: "Senior Investment Analyst"
+      - name: authorAvatar
+        label: "Author initials"
+        type: string
+        default: "JL"
+      - name: ticker
+        label: "Ticker"
+        type: string
+      - name: rating
+        label: "Rating"
+        type: string
+      - name: targetPrice
+        label: "Target price"
+        type: string
+      - name: currentPrice
+        label: "Current price"
+        type: string
+      - name: upside
+        label: "Upside"
+        type: string
+      - name: horizon
+        label: "Horizon"
+        type: string
+      - name: content
+        label: "Article body"
+        type: rich-text
+        options:
+          format: html

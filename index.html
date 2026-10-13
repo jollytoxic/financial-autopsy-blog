@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Financial Autopsy | Independent Equity Research</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            avgo: {
+              red: '#CC092F',
+              redHover: '#A60726',
+              redLight: '#FFF1F2',
+              navy: '#0F172A',
+              slate: '#1E293B',
+              muted: '#64748B',
+              border: '#E2E8F0',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased min-h-screen flex flex-col">
+
+  <!-- READING PROGRESS BAR (Active on Article Pages) -->
+  <div id="reading-progress"></div>
+
+  <!-- 1. TOP LIVE MARKET TICKER TAPE -->
+  <div class="bg-slate-950 text-slate-300 text-xs border-b border-slate-800 py-1.5 px-4 overflow-hidden select-none font-mono-num">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2 text-red-500 font-bold tracking-wider shrink-0 pr-4 border-r border-slate-800">
+        <span class="inline-block w-2 h-2 rounded-full bg-red-600 animate-ping"></span>
+        THE FINANCIAL AUTOPSY
+      </div>
+      <div class="min-w-0 flex-1 overflow-hidden whitespace-nowrap ml-2 sm:ml-4">
+        <div class="ticker-track flex items-center gap-8 text-xs">
+          <span class="text-white font-bold"><span class="text-red-500">COVERAGE: NASDAQ: AVGO</span> $1,780.45 <span class="text-emerald-400">▲ +$38.20 (+2.19%)</span></span>
+          <span class="text-slate-400">Analyst: <strong class="text-slate-200">Julian Lim, CFA</strong></span>
+          <span class="text-slate-400">S&P 500: 5,751.07 <span class="text-emerald-400">▲ +0.41%</span></span>
+          <span class="text-slate-400">PHLX Semi (SOX): 5,340.12 <span class="text-emerald-400">▲ +1.84%</span></span>
+          <span class="text-slate-400">AVGO Mkt Cap: <strong class="text-slate-200">$832.4B</strong></span>
+          <span class="text-slate-400">Forward P/E: <strong class="text-slate-200">28.5x</strong></span>
+          <span class="text-slate-400">Analyst Stance: <span class="text-emerald-400 font-semibold">STRONG BUY (12M Target: $2,100)</span></span>
+          <span class="text-slate-400">VMware ARR Run-rate: <strong class="text-slate-200">$12.4B</strong></span>
+          <!-- Duplicate for seamless infinite loop -->
+          <span class="text-white font-bold"><span class="text-red-500">COVERAGE: NASDAQ: AVGO</span> $1,780.45 <span class="text-emerald-400">▲ +$38.20 (+2.19%)</span></span>
+          <span class="text-slate-400">Analyst: <strong class="text-slate-200">Julian Lim, CFA</strong></span>
+          <span class="text-slate-400">S&P 500: 5,751.07 <span class="text-emerald-400">▲ +0.41%</span></span>
+          <span class="text-slate-400">PHLX Semi (SOX): 5,340.12 <span class="text-emerald-400">▲ +1.84%</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. MAIN NAVIGATION HEADER -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo & Branding -->
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-[#CC092F] flex items-center justify-center text-white font-black text-lg shadow-md group-hover:scale-105 transition-transform tracking-tighter">
+            FA
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-slate-900 tracking-tight text-lg">THE FINANCIAL AUTOPSY</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-[#CC092F] bg-red-50 px-1.5 py-0.5 rounded border border-red-200">EQUITY RESEARCH</span>
+            </div>
+            <p class="text-xs text-slate-500 hidden sm:block">By Julian Lim, CFA • Deep Dives into Companies, Markets & Numbers</p>
+          </div>
+        </a>
+
+        <!-- Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-5 text-sm font-medium text-slate-600">
+          <a href="#home" class="hover:text-[#CC092F] transition-colors py-2 border-b-2 border-transparent hover:border-[#CC092F]">Research Feed</a>
+          <a href="#post-1" class="hover:text-[#CC092F] transition-colors py-2 font-semibold text-slate-900">Welcome Memo</a>
+          <a href="#post-2" class="hover:text-[#CC092F] transition-colors py-2">Broadcom ($2,100)</a>
+          <a href="#post-3" class="hover:text-[#CC092F] transition-colors py-2">AI Networking</a>
+          <a href="#post-4" class="hover:text-[#CC092F] transition-colors py-2">VMware Model</a>
+          <a href="#post-5" class="hover:text-[#CC092F] transition-colors py-2">Bear Case</a>
+          <a href="#ux-rationale" class="text-[#CC092F] font-semibold bg-red-50 px-2.5 py-1 rounded-md border border-red-200 hover:bg-red-100 transition-colors">UX: Pages vs Scroll</a>
+          <a href="#about" class="hover:text-slate-900 transition-colors py-2">About Team</a>
+        </nav>
+
+        <!-- Layout Mode Switcher (Pages vs Scroll) -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <div class="bg-slate-100 p-1 rounded-lg border border-slate-200 flex text-xs font-semibold">
+            <button id="btn-mode-pages" onclick="setViewMode('pages')" class="px-2.5 py-1.5 rounded-md bg-white shadow-sm text-red-700 transition-all flex items-center gap-1" title="Independent Page per Blog (Recommended for In-Depth Equity Analysis)">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <span>Pages</span>
+            </button>
+            <button id="btn-mode-scroll" onclick="setViewMode('scroll')" class="px-2.5 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition-all flex items-center gap-1" title="Continuous Long Scroll View">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 13l-7 7-7-7m14-8l-7 7-7-7"/></svg>
+              <span>Scroll</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. MAIN CONTENT CONTAINER -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- VIEW 1: HOME FEED VIEW (Executive Dashboard) -->
+    <div id="view-home">
+      
+      <!-- Academic Project & Roleplay Banner -->
+      <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white rounded-2xl p-6 sm:p-8 mb-8 shadow-xl border border-slate-800 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-[#CC092F]/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="relative z-10">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-4 border-b border-slate-700/80 pb-4">
+            <div class="flex items-center gap-2 text-xs font-semibold">
+              <span class="bg-[#CC092F] text-white px-2.5 py-0.5 rounded tracking-wide uppercase">Group 1 Project</span>
+              <span class="text-slate-300">Nigel • Alexis • Jun • Jim • Due: 16 October 2026</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs text-slate-400">
+              <span>Persona: <strong>Julian Lim, CFA</strong> (Singapore)</span>
+              <span>•</span>
+              <span>First Coverage: <strong>Broadcom Inc. ($AVGO)</strong></span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+            <div class="lg:col-span-2">
+              <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-3">
+                The Financial Autopsy: Pulling Apart the Numbers Behind the Headlines
+              </h1>
+              <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
+                By Julian Lim, CFA. Independent fundamental equity research. We look behind headline profits to understand what produced the result, examining how companies earn money, how much capital they need, and what expectations investors are asked to pay for. First company under coverage: <strong>Broadcom Inc. ($AVGO)</strong>.
+              </p>
+              <div class="flex flex-wrap items-center gap-3 text-xs">
+                <a href="#post-1" class="bg-[#CC092F] hover:bg-[#A60726] text-white px-4 py-2 rounded-lg font-bold shadow-md transition-all flex items-center gap-1.5">
+                  Read Welcome Memo
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+                <a href="#post-2" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 px-3.5 py-2 rounded-lg font-medium transition-all">
+                  Broadcom $2,100 Initiation Memo
+                </a>
+                <a href="#about" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 px-3.5 py-2 rounded-lg font-medium transition-all">
+                  About Julian Lim & Team
+                </a>
+              </div>
+            </div>
+
+            <!-- Analyst Valuation Ribbon Card -->
+            <div class="bg-slate-950/90 border border-slate-700/80 rounded-xl p-5 shadow-lg">
+              <div class="flex items-center justify-between text-xs text-slate-400 pb-2 border-b border-slate-800 mb-3">
+                <span>COVERAGE DESK • $AVGO</span>
+                <span class="text-emerald-400 font-bold">OUTPERFORM</span>
+              </div>
+              <div class="grid grid-cols-2 gap-3 mb-3">
+                <div>
+                  <span class="text-slate-400 text-[11px] uppercase block">Current Price</span>
+                  <span class="text-xl font-bold font-mono-num text-white">$1,780.45</span>
+                </div>
+                <div>
+                  <span class="text-slate-400 text-[11px] uppercase block">12M Target</span>
+                  <span class="text-xl font-bold font-mono-num text-[#CC092F]">$2,100.00</span>
+                </div>
+                <div>
+                  <span class="text-slate-400 text-[11px] uppercase block">Implied Upside</span>
+                  <span class="text-sm font-bold font-mono-num text-emerald-400">+17.9% Bull</span>
+                </div>
+                <div>
+                  <span class="text-slate-400 text-[11px] uppercase block">Analyst Stance</span>
+                  <span class="text-sm font-bold text-white">Strong Buy</span>
+                </div>
+              </div>
+              <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex justify-between">
+                <span>Primary Focus: AI ASICs & VCF</span>
+                <span>5 Research Memos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters & Search Toolbar -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-200">
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap items-center gap-2 w-full md:w-auto">
+          <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-[#CC092F] text-white shadow-sm" data-filter="all">
+            All Research (4)
+          </button>
+          <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-white text-slate-700 border border-slate-200 hover:bg-slate-50" data-filter="valuation">
+            Valuation & DCF
+          </button>
+          <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-white text-slate-700 border border-slate-200 hover:bg-slate-50" data-filter="networking">
+            AI Networking
+          </button>
+          <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-white text-slate-700 border border-slate-200 hover:bg-slate-50" data-filter="software">
+            VMware Integration
+          </button>
+          <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-white text-slate-700 border border-slate-200 hover:bg-slate-50" data-filter="risk">
+            Bear Case / Risks
+          </button>
+        </div>
+
+        <!-- Search Input -->
+        <div class="relative w-full md:w-72">
+          <input type="text" id="search-input" placeholder="Search memos, metrics, keywords..." 
+                 class="w-full bg-white border border-slate-200 rounded-lg pl-9 pr-3 py-1.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#CC092F] focus:border-transparent transition-all shadow-sm">
+          <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Articles Grid -->
+      <div id="articles-feed-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <!-- Injected via app.js -->
+      </div>
+
+      <!-- Quick Research Matrix Summary Box -->
+      <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm mb-12">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+          <div>
+            <span class="text-xs font-bold text-[#CC092F] uppercase tracking-wider">Executive Overview</span>
+            <h3 class="text-lg font-bold text-slate-900 mt-0.5">Broadcom Core Financial & Operational Dashboard</h3>
+          </div>
+          <span class="text-xs text-slate-500 font-mono-num">SEC Form 10-K & Projections</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div class="p-3 bg-slate-50 rounded-lg border border-slate-100">
+            <span class="text-[11px] text-slate-500 uppercase tracking-wider block">FY25E Revenue</span>
+            <span class="text-lg font-bold font-mono-num text-slate-900">$62.8 Billion</span>
+            <span class="text-[11px] text-emerald-600 block mt-0.5">▲ +21.8% YoY</span>
+          </div>
+          <div class="p-3 bg-slate-50 rounded-lg border border-slate-100">
+            <span class="text-[11px] text-slate-500 uppercase tracking-wider block">AI Silicon Run-rate</span>
+            <span class="text-lg font-bold font-mono-num text-[#CC092F]">$15.8 Billion</span>
+            <span class="text-[11px] text-slate-600 block mt-0.5">Google/Meta ASICs</span>
+          </div>
+          <div class="p-3 bg-slate-50 rounded-lg border border-slate-100">
+            <span class="text-[11px] text-slate-500 uppercase tracking-wider block">Operating Margin</span>
+            <span class="text-lg font-bold font-mono-num text-slate-900">62.5% Non-GAAP</span>
+            <span class="text-[11px] text-emerald-600 block mt-0.5">VMware Synergies</span>
+          </div>
+          <div class="p-3 bg-slate-50 rounded-lg border border-slate-100">
+            <span class="text-[11px] text-slate-500 uppercase tracking-wider block">Free Cash Flow</span>
+            <span class="text-lg font-bold font-mono-num text-slate-900">$27.4 Billion</span>
+            <span class="text-[11px] text-slate-600 block mt-0.5">43% FCF Margin</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- VIEW 2: DEDICATED ARTICLE VIEW (Pages Mode) -->
+    <div id="view-article" class="hidden">
+      
+      <!-- Back Navigation & Toolbar -->
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-200">
+        <a href="#home" class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-600 hover:text-[#CC092F] transition-colors py-1.5 px-3 bg-white rounded-lg border border-slate-200 shadow-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          Back to Research Feed
+        </a>
+
+        <!-- Reading Utility Controls -->
+        <div class="flex items-center gap-3">
+          <div class="flex items-center gap-1 text-xs text-slate-500 bg-white border border-slate-200 rounded-lg p-1 shadow-sm">
+            <span class="px-1 text-[11px] uppercase tracking-wider font-semibold">Text:</span>
+            <button onclick="changeFontSize('sm')" data-size="sm" class="btn-font-size px-2 py-0.5 rounded text-xs hover:bg-slate-100 font-mono">A-</button>
+            <button onclick="changeFontSize('md')" data-size="md" class="btn-font-size px-2 py-0.5 rounded text-xs bg-red-50 text-red-700 border border-red-200 font-mono font-bold">A</button>
+            <button onclick="changeFontSize('lg')" data-size="lg" class="btn-font-size px-2 py-0.5 rounded text-xs hover:bg-slate-100 font-mono">A+</button>
+          </div>
+
+          <button onclick="window.print()" class="text-xs font-semibold text-slate-600 hover:text-slate-900 bg-white border border-slate-200 px-3 py-1.5 rounded-lg shadow-sm flex items-center gap-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+            <span>Print Report</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Article Header Container -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-10 mb-8">
+        
+        <div class="flex flex-wrap items-center gap-3 mb-4">
+          <span id="art-tag" class="text-xs uppercase font-bold tracking-wider px-2.5 py-1 rounded-full border">
+            Flagship Research
+          </span>
+          <span id="art-category" class="text-xs text-slate-500 font-medium">Initiation & Valuation</span>
+          <span class="text-slate-300">•</span>
+          <span id="art-date" class="text-xs text-slate-500">October 2026</span>
+          <span class="text-slate-300">•</span>
+          <span id="art-read-time" class="text-xs text-slate-500 font-mono-num">9 min read</span>
+        </div>
+
+        <h1 id="art-title" class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-4 tracking-tight">
+          Broadcom (NASDAQ: AVGO) Initiation: Why Custom Silicon & VMware Justify a $2,100 Bull Case
+        </h1>
+
+        <p id="art-subtitle" class="text-slate-600 text-base sm:text-lg leading-relaxed mb-6 pb-6 border-b border-slate-200">
+          A comprehensive equity research initiation analyzing the dual-engine moat...
+        </p>
+
+        <!-- Analyst Profile & Metric Bar -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50 border border-slate-200/80 rounded-xl p-4">
+          <div class="flex items-center gap-3">
+            <div id="art-author-avatar" class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-sm font-mono shadow-sm">
+              JT
+            </div>
+            <div>
+              <div id="art-author-name" class="font-bold text-slate-900 text-sm">Julian Lim, CFA</div>
+              <div id="art-author-role" class="text-xs text-slate-500">Lead Semiconductor & Software Analyst</div>
+              <div class="text-[11px] text-red-600 font-semibold mt-0.5">Roleplay Equity Desk • Student Uni Project</div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-2 text-center border-t md:border-t-0 md:border-l border-slate-200 pt-3 md:pt-0 md:pl-4">
+            <div>
+              <span class="text-[10px] text-slate-500 uppercase block">Rating</span>
+              <span id="art-rating" class="font-bold text-xs text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded">STRONG BUY</span>
+            </div>
+            <div>
+              <span class="text-[10px] text-slate-500 uppercase block">Target</span>
+              <span id="art-target-price" class="font-bold text-xs font-mono-num text-[#CC092F]">$2,100</span>
+            </div>
+            <div>
+              <span class="text-[10px] text-slate-500 uppercase block">Current</span>
+              <span id="art-current-price" class="font-bold text-xs font-mono-num text-slate-800">$1,780.45</span>
+            </div>
+            <div>
+              <span class="text-[10px] text-slate-500 uppercase block">Upside</span>
+              <span id="art-upside" class="font-bold text-xs font-mono-num text-emerald-600">+17.9%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Main Article Body -->
+      <article class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-10 mb-8">
+        <div id="art-body" class="article-content max-w-4xl mx-auto text-base text-slate-800">
+          <!-- Populated dynamically via app.js -->
+        </div>
+
+        <!-- Academic / Institutional Disclaimer -->
+        <div class="mt-12 pt-6 border-t border-slate-200 text-xs text-slate-500 leading-relaxed bg-slate-50 rounded-xl p-5">
+          <p class="font-bold text-slate-700 uppercase tracking-wider mb-1">Analyst Certification & Educational Disclaimer</p>
+          <p class="mb-0">
+            This research report was prepared exclusively for academic purposes as part of a university UI/UX and financial analysis curriculum. The views expressed in this report reflect the author’s simulated investment thesis on Broadcom Inc. (NASDAQ: AVGO). This document does not constitute an offer to buy or sell securities. Past performance is no guarantee of future returns.
+          </p>
+        </div>
+      </article>
+
+      <!-- Next / Previous Article Pagination Bar -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+        <button id="art-prev-btn" class="p-4 bg-white rounded-xl border border-slate-200 hover:border-red-300 text-left transition-all shadow-sm group">
+          <span class="text-xs text-slate-400 uppercase tracking-wider block mb-1">← Previous Research Note</span>
+          <span id="art-prev-title" class="font-bold text-sm text-slate-800 group-hover:text-[#CC092F] transition-colors line-clamp-1">Previous Note</span>
+        </button>
+
+        <button id="art-next-btn" class="p-4 bg-white rounded-xl border border-slate-200 hover:border-red-300 text-right transition-all shadow-sm group">
+          <span class="text-xs text-slate-400 uppercase tracking-wider block mb-1">Next Research Note →</span>
+          <span id="art-next-title" class="font-bold text-sm text-slate-800 group-hover:text-[#CC092F] transition-colors line-clamp-1">Next Note</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- VIEW 3: CONTINUOUS SCROLL VIEW -->
+    <div id="view-scroll" class="hidden">
+      <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 sm:p-4 mb-8 flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <span class="text-amber-800 font-bold text-xs uppercase px-2 py-0.5 bg-amber-100 rounded">Continuous Feed</span>
+          <span class="text-xs text-amber-900 hidden sm:inline">Viewing all research notes in a continuous stream.</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <!-- Text Resizer in Scroll Mode -->
+          <div class="flex items-center gap-1 text-xs text-slate-500 bg-white border border-slate-200 rounded-lg p-1 shadow-sm">
+            <span class="px-1 text-[11px] uppercase tracking-wider font-semibold">Text:</span>
+            <button onclick="changeFontSize('sm')" data-size="sm" class="btn-font-size px-2 py-0.5 rounded text-xs hover:bg-slate-100 font-mono">A-</button>
+            <button onclick="changeFontSize('md')" data-size="md" class="btn-font-size px-2 py-0.5 rounded text-xs bg-red-50 text-red-700 border border-red-200 font-mono font-bold">A</button>
+            <button onclick="changeFontSize('lg')" data-size="lg" class="btn-font-size px-2 py-0.5 rounded text-xs hover:bg-slate-100 font-mono">A+</button>
+          </div>
+          <button onclick="setViewMode('pages')" class="text-xs font-bold text-red-600 hover:underline">
+            Switch to Pages Mode
+          </button>
+        </div>
+      </div>
+
+      <div id="scroll-articles-container" class="max-w-4xl mx-auto">
+        <!-- Injected via app.js -->
+      </div>
+    </div>
+
+    <!-- VIEW 4: UI/UX DECISION ANALYSIS: "PAGES VS SCROLL" -->
+    <div id="view-ux-rationale" class="hidden">
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-10 mb-8 max-w-4xl mx-auto">
+        
+        <div class="border-b border-slate-200 pb-4 mb-6">
+          <span class="text-xs uppercase font-bold tracking-wider text-[#CC092F] bg-red-50 px-2.5 py-1 rounded-full border border-red-200">
+            UI/UX Group Project Submission
+          </span>
+          <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3 mb-2">
+            UI/UX Architecture Decision: "Pages vs. Scroll" for an Equity Research Blog
+          </h1>
+          <p class="text-sm text-slate-600">
+            Comprehensive evaluation addressing project requirement: <em>"We're tasked to submit minimum 4 blogs, so decide if it's better if it's pages or scroll."</em>
+          </p>
+        </div>
+
+        <div class="article-content">
+          <div class="analyst-callout bull">
+            <h4 class="text-green-900 font-bold text-base mb-1">Our Group Decision: The Hybrid "Card Feed Hub + Dedicated Article Pages"</h4>
+            <p class="text-green-950 text-sm mb-0">
+              For an institutional equity research blog covering a high-complexity stock like Broadcom ($AVGO), <strong>Dedicated Pages (Page-based routing) are decisively superior to a single infinite scroll</strong>. Below is the multi-dimensional UX justification developed for our university submission.
+            </p>
+          </div>
+
+          <h2>1. Comparative Analysis: Pages vs. Continuous Scroll</h2>
+          <table class="financial-table">
+            <thead>
+              <tr>
+                <th>Evaluation Dimension</th>
+                <th>Dedicated Pages (Our Choice)</th>
+                <th>Continuous Long Scroll</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-semibold">Cognitive Load & Reading Fatigue</td>
+                <td class="text-emerald-700 font-medium">Low: Reader focuses on one thesis at a time (e.g. Valuation vs Bear Case).</td>
+                <td class="text-red-700">High: 4,000+ words of dense financial data creates severe "scroll fatigue."</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Academic Grading & Citation</td>
+                <td class="text-emerald-700 font-medium">Direct URL hash (#post-1, #post-2) allows professors to grade specific memos.</td>
+                <td class="text-red-700">Difficult to cite; reader must guess scroll percentage.</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Media & Performance (Videos/Charts)</td>
+                <td class="text-emerald-700 font-medium">Media isolated per page; rapid rendering; smooth progress tracking.</td>
+                <td class="text-amber-700">Heavier initial DOM weight; stacked videos lag on mobile viewports.</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Information Architecture & Scent</td>
+                <td class="text-emerald-700 font-medium">Home dashboard offers instant scanning of Target Prices, Ratings, and Dates.</td>
+                <td class="text-slate-600">Buried content; user must scroll through Post 1 to discover Post 4.</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Industry Benchmark Alignment</td>
+                <td class="text-emerald-700 font-medium">Standard for Bloomberg Intelligence, Morningstar, Morgan Stanley Research, Substack.</td>
+                <td class="text-slate-600">Common only for casual social feeds (Twitter/Instagram), not equity research.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>2. The Five Core UX Principles Behind Our Decision</h2>
+          
+          <h3>A. Scent of Information & Executive Skimmability</h3>
+          <p>
+            Institutional investors, portfolio managers, and university professors do not read financial research linearly from top to bottom. They scan first: What is the rating? What is the 12-month target price? What are the key catalysts? Our <strong>Home Dashboard</strong> presents all 4 memos as discrete cards with financial pills (Rating, Target, Upside, Read Time). The user chooses when to invest their attention.
+          </p>
+
+          <h3>B. Isolation of Deep Reading Focus</h3>
+          <p>
+            When reading a DCF valuation model with mathematical tables and margin trajectories, visual clutter is toxic to comprehension. Moving to a dedicated page clears out external distractions, activates the reading progress bar, and unlocks reading comfort tools (text scaling from A- to A+).
+          </p>
+
+          <h3>C. Shareability and Deep Linking</h3>
+          <p>
+            Every blog post has an individual slug and anchor hash (e.g. <code>#post-1</code> for Initiation, <code>#post-5</code> for the Bear Case). If our group wants to present our Bear Case in a university seminar, we can link directly to that specific slide or URL without forcing the audience to scroll past three unrelated articles.
+          </p>
+
+          <h3>D. Video & Image Asset Performance</h3>
+          <p>
+            Financial blogs frequently feature executive interviews (Hock Tan on CNBC) and heavy architectural diagrams (Tomahawk 5 spine-leaf topology). Stacking four full-length video players and multiple infographics onto a single continuous webpage slows down initial paint time and consumes significant bandwidth on mobile devices.
+          </p>
+
+          <h3>E. The Live Toggle Demonstration</h3>
+          <p>
+            To prove our thesis to our university evaluator, we built a live interactive toggle in the header: clicking <strong>"Scroll"</strong> renders all 4 articles sequentially, while clicking <strong>"Pages"</strong> isolates them. Testing both modes side-by-side demonstrates that Pages provide vastly superior readability and mental retention.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- VIEW 5: ABOUT THE ANALYST & TEAM -->
+    <div id="view-about" class="hidden">
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-10 mb-8 max-w-4xl mx-auto">
+        <div class="border-b border-slate-200 pb-4 mb-6">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <span class="text-xs uppercase font-bold tracking-wider text-[#CC092F] bg-red-50 px-2.5 py-1 rounded-full border border-red-200">
+              Group 1 Project • Due: Friday, 16 October 2026
+            </span>
+            <span class="text-xs text-slate-500 font-medium">Team: Nigel • Alexis • Jun • Jim</span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2 mb-2">
+            About The Financial Autopsy
+          </h1>
+          <p class="text-sm text-slate-600">
+            University Group Project: Financial Analysis & High-Fidelity UI/UX Prototyping Desk.
+          </p>
+        </div>
+
+        <div class="space-y-6 text-slate-700 text-sm leading-relaxed">
+          
+          <!-- 1st Section: About Me: Julian Lim, CFA -->
+          <div class="p-6 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-sm font-mono shadow-sm">
+                JL
+              </div>
+              <div>
+                <h3 class="font-extrabold text-slate-900 text-lg leading-tight">About Me: Julian Lim, CFA</h3>
+                <span class="text-xs text-[#CC092F] font-semibold">Senior Investment Analyst • Singapore</span>
+              </div>
+            </div>
+
+            <p class="mb-3">
+              I’m Julian Lim, a Singapore-based financial analyst and CFA charterholder with a bachelor’s degree in finance and ten years in equity research and asset management.
+            </p>
+            <p class="mb-3">
+              I began my career at DBS Vickers, analysing listed companies and developing investment research for clients. I later joined Lion Global Investors, progressing to Senior Investment Analyst and working with portfolio managers on stock selection, valuation and portfolio risk.
+            </p>
+            <p class="mb-4">
+              Over here at <strong>The Financial Autopsy</strong>, I share my perspective and analysis on companies, markets and investment decisions; expect deep dives into the numbers and a closer look at what makes these companies tick. Thank you for stopping by, and I hope you find the articles and insights useful and enjoyable.
+            </p>
+
+            <div class="pt-3 border-t border-slate-200 text-xs text-slate-500 italic">
+              <strong>Disclaimer:</strong> Everything in this blog is strictly for learning purposes only and should not be taken as financial advice.
+            </div>
+          </div>
+
+          <!-- 2nd Section: Behind the Blog -->
+          <div class="p-6 bg-white rounded-xl border border-slate-200 shadow-sm space-y-5">
+            <div class="border-b border-slate-100 pb-3">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Academic Roleplay Architecture</span>
+              <h3 class="font-extrabold text-slate-900 text-base mt-1">Behind the Blog</h3>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm mb-1.5">The Persona: "Julian Lim"</h4>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                To fulfill the roleplay brief, our group has created the persona of <strong>Julian Lim, CFA</strong>, a veteran semiconductor and infrastructure software analyst based in Singapore. This persona enables our research to combine institutional rigour with localized perspective, moving beyond generic AI commentary into structured valuation models.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- 4. FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 text-xs border-t border-slate-800 py-10 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-[#CC092F] flex items-center justify-center text-white font-black text-xs tracking-tighter">
+            FA
+          </div>
+          <div>
+            <div class="font-bold text-slate-200 tracking-wide">THE FINANCIAL AUTOPSY</div>
+            <div class="text-[11px] text-slate-500">Group 1 • Nigel, Alexis, Jun, Jim • Due: 16 October 2026</div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-5 text-xs text-slate-400">
+          <a href="#home" class="hover:text-white transition-colors">Home Feed</a>
+          <a href="#post-1" class="hover:text-white transition-colors">Welcome Memo</a>
+          <a href="#post-2" class="hover:text-white transition-colors">Broadcom ($2,100)</a>
+          <a href="#post-3" class="hover:text-white transition-colors">AI Networking</a>
+          <a href="#post-4" class="hover:text-white transition-colors">VMware Model</a>
+          <a href="#post-5" class="hover:text-white transition-colors">Bear Case</a>
+          <a href="#ux-rationale" class="hover:text-white transition-colors text-red-400">Pages vs Scroll UX</a>
+          <a href="#about" class="hover:text-white transition-colors">About Team</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+        <p class="mb-0">
+          © 2026 The Financial Autopsy. Educational roleplay research by Julian Lim, CFA. Not financial advice.
+        </p>
+        <p class="mb-0 flex items-center gap-2">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+          Ready for online deployment (Netlify / GitHub Pages)
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 5. INTERACTIVE MEDIA MODAL (For testing custom video/picture embeds) -->
+  <div id="media-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 animate-in fade-in zoom-in duration-150">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
+        <h3 id="modal-media-title" class="font-bold text-slate-900 text-base">Media Embed Settings</h3>
+        <button onclick="closeMediaModal()" class="text-slate-400 hover:text-slate-600">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <p id="modal-media-desc" class="text-xs text-slate-600 mb-4 leading-relaxed">
+        Paste a media URL to preview how custom assets integrate into the financial layout.
+      </p>
+
+      <div class="mb-4">
+        <label class="block text-xs font-semibold text-slate-700 mb-1">Asset URL or File Path</label>
+        <input type="text" id="modal-media-input" class="w-full text-xs border border-slate-200 rounded-lg p-2.5 focus:ring-2 focus:ring-red-600 focus:outline-none">
+      </div>
+
+      <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 text-[11px] text-slate-500 mb-5 leading-relaxed">
+        <strong>Publishing Tip for Group Members:</strong> When you're ready to publish, you can also permanently hardcode your own YouTube embed code or <code>&lt;img src="..."&gt;</code> in <code>app.js</code>!
+      </div>
+
+      <div class="flex items-center justify-end gap-2">
+        <button onclick="closeMediaModal()" class="px-4 py-2 text-xs font-medium text-slate-600 hover:bg-slate-100 rounded-lg transition-colors">
+          Cancel
+        </button>
+        <button onclick="applyMediaInput()" class="px-4 py-2 text-xs font-bold bg-[#CC092F] hover:bg-[#A60726] text-white rounded-lg shadow-sm transition-colors">
+          Preview Media
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-container" class="fixed bottom-20 right-6 z-50 pointer-events-none"></div>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
