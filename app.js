@@ -145,6 +145,8 @@ function showArticleView(article) {
   document.getElementById("art-current-price").textContent = article.currentPrice;
   document.getElementById("art-current-label").textContent = article.priceDate ? `Price (${article.priceDate})` : "Current";
   document.getElementById("art-upside").textContent = article.upside;
+  // Articles without a rating or prices (e.g. new non-stock posts) hide the metric ribbon
+  document.getElementById("art-metrics").classList.toggle("hidden", !hasMetrics(article));
 
   // Article Body HTML
   document.getElementById("art-body").innerHTML = article.content;
@@ -241,6 +243,10 @@ function showAboutView() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+function hasMetrics(article) {
+  return Boolean(article.rating || article.targetPrice || article.currentPrice || article.upside);
+}
+
 // Render Articles Grid on Home View
 function renderArticlesList() {
   const container = document.getElementById("articles-feed-container");
@@ -283,7 +289,7 @@ function renderArticlesList() {
         </p>
 
         <!-- Financial Analyst Metric Bar -->
-        <div class="bg-slate-50 border border-slate-200/80 rounded-lg p-3 grid grid-cols-2 gap-2 text-xs mb-4">
+        <div class="bg-slate-50 border border-slate-200/80 rounded-lg p-3 grid grid-cols-2 gap-2 text-xs mb-4${hasMetrics(article) ? "" : " hidden"}">
           <div>
             <span class="text-slate-500 block text-[11px] uppercase tracking-wider">Rating</span>
             <span class="font-bold text-slate-900">${article.rating}</span>
