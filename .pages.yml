@@ -94,6 +94,9 @@ content:
       - name: currentPrice
         label: "Current price"
         type: string
+      - name: priceDate
+        label: "Price date (e.g. 13 Oct 2026)"
+        type: string
       - name: upside
         label: "Upside"
         type: string
@@ -195,6 +198,9 @@ content:
         type: string
       - name: currentPrice
         label: "Current price"
+        type: string
+      - name: priceDate
+        label: "Price date (e.g. 13 Oct 2026)"
         type: string
       - name: upside
         label: "Upside"

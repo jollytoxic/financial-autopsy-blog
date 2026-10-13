@@ -145,6 +145,7 @@ function showArticleView(article) {
   document.getElementById("art-rating").textContent = article.rating;
   document.getElementById("art-target-price").textContent = article.targetPrice;
   document.getElementById("art-current-price").textContent = article.currentPrice;
+  document.getElementById("art-current-label").textContent = article.priceDate ? `Price (${article.priceDate})` : "Current";
   document.getElementById("art-upside").textContent = article.upside;
 
   // Article Body HTML

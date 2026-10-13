@@ -354,3 +354,26 @@ article {
     max-width: 100% !important;
   }
 }
+
+/* Unverified claims: teammates replace the text, then delete the surrounding span */
+.placeholder-claim {
+  background: #fef3c7;
+  border-bottom: 2px dashed #d97706;
+  border-radius: 2px;
+  padding: 0 2px;
+  color: inherit;
+}
+.placeholder-claim::after {
+  content: "PLACEHOLDER, VERIFY";
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #92400e;
+  background: #fde68a;
+  border-radius: 3px;
+  padding: 1px 4px;
+  margin-left: 4px;
+  vertical-align: super;
+  white-space: nowrap;
+}

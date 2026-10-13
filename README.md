@@ -15,7 +15,7 @@ This prototype models a high-end institutional equity research blog developed by
 ### The Analyst Persona: Julian Lim, CFA
 - **Background:** Lead Analyst covering the Semiconductor and Infrastructure Software sectors.
 - **Analytical Stance:** Institutional fundamental analysis, DCF financial modeling, hyperscaler capex tracking, and enterprise software pricing power.
-- **Coverage Verdict:** **STRONG BUY** with a 12-month base price target of **$2,100.00** (+17.9% upside from current levels of $1,780.45).
+- **Coverage Verdict:** **STRONG BUY** with a 12-month base price target of **$540.00** (+51.6% upside from $356.26 as of 13 Oct 2026).
 
 ---
 
@@ -40,8 +40,8 @@ The prototype strictly incorporates Broadcom's corporate visual identity combine
 
 The prototype contains 4 full-length, professionally written research notes accessible via both **Pages Mode** and **Continuous Scroll Mode**:
 
-1. **Blog 1: Flagship Initiation & Valuation ($2,100 Bull Case)**
-   - *Title:* "Broadcom (NASDAQ: AVGO) Initiation: Why Custom Silicon (XPUs) & VMware Justify a $2,100 Bull Case"
+1. **Blog 1: Flagship Initiation & Valuation ($540 Bull Case)**
+   - *Title:* "Broadcom (NASDAQ: AVGO) Initiation: Why Custom Silicon (XPUs) & VMware Justify a $540 Bull Case"
    - *Topics:* Dual-engine investment thesis, custom AI silicon (ASIC) moat vs. Nvidia GPUs, DCF model, and forward P/E multiple valuation.
    - *Includes:* Segment revenue mix chart placeholder, financial valuation table, and executive video briefing placeholder.
 
@@ -57,7 +57,7 @@ The prototype contains 4 full-length, professionally written research notes acce
 
 4. **Blog 4: Risk Matrix & Bear Case Stress-Testing**
    - *Title:* "Bear Case Stress-Test: Customer Concentration Risks, Apple RF Renewal, and Antitrust Clouds"
-   - *Topics:* Apple RF filter dependency (~18.5% of revenue), hyperscaler in-house silicon disintermediation (Google/Meta), EU antitrust complaints, and downside valuation floor at $1,350.
+   - *Topics:* Apple RF filter dependency (~18.5% of revenue), hyperscaler in-house silicon disintermediation (Google/Meta), EU antitrust complaints, and a $243 bear case.
    - *Includes:* Customer concentration bar chart placeholder and regulatory panel discussion video slot.
 
 ---

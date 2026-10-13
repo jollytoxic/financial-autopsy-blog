@@ -40,6 +40,7 @@ for (const dir of DIRS) {
       rating: d.rating || "",
       targetPrice: d.targetPrice || "",
       currentPrice: d.currentPrice || "",
+      priceDate: d.priceDate || "",
       upside: d.upside || "",
       horizon: d.horizon || "",
       content: d.content || ""
