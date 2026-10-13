@@ -80,10 +80,10 @@ function handleHashChange() {
     } else {
       showHomeView();
     }
-  } else if (hash === "ux-rationale") {
-    showUxRationaleView();
   } else if (hash === "about") {
     showAboutView();
+  } else {
+    showHomeView();
   }
 }
 
@@ -112,7 +112,6 @@ function showHomeView() {
   document.getElementById("view-home").classList.remove("hidden");
   document.getElementById("view-article").classList.add("hidden");
   document.getElementById("view-scroll").classList.add("hidden");
-  document.getElementById("view-ux-rationale").classList.add("hidden");
   document.getElementById("view-about").classList.add("hidden");
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
@@ -121,7 +120,6 @@ function showHomeView() {
 function showArticleView(article) {
   document.getElementById("view-home").classList.add("hidden");
   document.getElementById("view-scroll").classList.add("hidden");
-  document.getElementById("view-ux-rationale").classList.add("hidden");
   document.getElementById("view-about").classList.add("hidden");
   
   const articleView = document.getElementById("view-article");
@@ -184,7 +182,6 @@ function showArticleView(article) {
 function renderContinuousScrollView() {
   document.getElementById("view-home").classList.add("hidden");
   document.getElementById("view-article").classList.add("hidden");
-  document.getElementById("view-ux-rationale").classList.add("hidden");
   document.getElementById("view-about").classList.add("hidden");
 
   const scrollView = document.getElementById("view-scroll");
@@ -235,23 +232,11 @@ function renderContinuousScrollView() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// Render UX Rationale View (University project requirement)
-function showUxRationaleView() {
-  document.getElementById("view-home").classList.add("hidden");
-  document.getElementById("view-article").classList.add("hidden");
-  document.getElementById("view-scroll").classList.add("hidden");
-  document.getElementById("view-about").classList.add("hidden");
-  document.getElementById("view-ux-rationale").classList.remove("hidden");
-  wrapTablesForMobile();
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
 // Render About the Analyst View
 function showAboutView() {
   document.getElementById("view-home").classList.add("hidden");
   document.getElementById("view-article").classList.add("hidden");
   document.getElementById("view-scroll").classList.add("hidden");
-  document.getElementById("view-ux-rationale").classList.add("hidden");
   document.getElementById("view-about").classList.remove("hidden");
   window.scrollTo({ top: 0, behavior: "smooth" });
 }

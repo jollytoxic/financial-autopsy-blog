@@ -109,8 +109,7 @@
           <a href="#post-2" class="hover:text-[#CC092F] transition-colors py-2">Broadcom ($540)</a>
           <a href="#post-3" class="hover:text-[#CC092F] transition-colors py-2">AI Networking</a>
           <a href="#post-4" class="hover:text-[#CC092F] transition-colors py-2">VMware Model</a>
-          <a href="#post-5" class="hover:text-[#CC092F] transition-colors py-2">Bear Case</a>
-          <a href="#ux-rationale" class="text-[#CC092F] font-semibold bg-red-50 px-2.5 py-1 rounded-md border border-red-200 hover:bg-red-100 transition-colors">UX: Pages vs Scroll</a>
+          <a href="#post-5" class="hover:text-[#CC092F] transition-colors py-2">Bear Case</a>
           <a href="#about" class="hover:text-slate-900 transition-colors py-2">About Team</a>
         </nav>
 
@@ -419,100 +418,7 @@
       </div>
     </div>
 
-    <!-- VIEW 4: UI/UX DECISION ANALYSIS: "PAGES VS SCROLL" -->
-    <div id="view-ux-rationale" class="hidden">
-      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-10 mb-8 max-w-4xl mx-auto">
-        
-        <div class="border-b border-slate-200 pb-4 mb-6">
-          <span class="text-xs uppercase font-bold tracking-wider text-[#CC092F] bg-red-50 px-2.5 py-1 rounded-full border border-red-200">
-            UI/UX Group Project Submission
-          </span>
-          <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3 mb-2">
-            UI/UX Architecture Decision: "Pages vs. Scroll" for an Equity Research Blog
-          </h1>
-          <p class="text-sm text-slate-600">
-            Comprehensive evaluation addressing project requirement: <em>"We're tasked to submit minimum 4 blogs, so decide if it's better if it's pages or scroll."</em>
-          </p>
-        </div>
-
-        <div class="article-content">
-          <div class="analyst-callout bull">
-            <h4 class="text-green-900 font-bold text-base mb-1">Our Group Decision: The Hybrid "Card Feed Hub + Dedicated Article Pages"</h4>
-            <p class="text-green-950 text-sm mb-0">
-              For an institutional equity research blog covering a high-complexity stock like Broadcom ($AVGO), <strong>Dedicated Pages (Page-based routing) are decisively superior to a single infinite scroll</strong>. Below is the multi-dimensional UX justification developed for our university submission.
-            </p>
-          </div>
-
-          <h2>1. Comparative Analysis: Pages vs. Continuous Scroll</h2>
-          <table class="financial-table">
-            <thead>
-              <tr>
-                <th>Evaluation Dimension</th>
-                <th>Dedicated Pages (Our Choice)</th>
-                <th>Continuous Long Scroll</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="font-semibold">Cognitive Load & Reading Fatigue</td>
-                <td class="text-emerald-700 font-medium">Low: Reader focuses on one thesis at a time (e.g. Valuation vs Bear Case).</td>
-                <td class="text-red-700">High: 4,000+ words of dense financial data creates severe "scroll fatigue."</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Academic Grading & Citation</td>
-                <td class="text-emerald-700 font-medium">Direct URL hash (#post-1, #post-2) allows professors to grade specific memos.</td>
-                <td class="text-red-700">Difficult to cite; reader must guess scroll percentage.</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Media & Performance (Videos/Charts)</td>
-                <td class="text-emerald-700 font-medium">Media isolated per page; rapid rendering; smooth progress tracking.</td>
-                <td class="text-amber-700">Heavier initial DOM weight; stacked videos lag on mobile viewports.</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Information Architecture & Scent</td>
-                <td class="text-emerald-700 font-medium">Home dashboard offers instant scanning of Target Prices, Ratings, and Dates.</td>
-                <td class="text-slate-600">Buried content; user must scroll through Post 1 to discover Post 4.</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Industry Benchmark Alignment</td>
-                <td class="text-emerald-700 font-medium">Standard for Bloomberg Intelligence, Morningstar, Morgan Stanley Research, Substack.</td>
-                <td class="text-slate-600">Common only for casual social feeds (Twitter/Instagram), not equity research.</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h2>2. The Five Core UX Principles Behind Our Decision</h2>
-          
-          <h3>A. Scent of Information & Executive Skimmability</h3>
-          <p>
-            Institutional investors, portfolio managers, and university professors do not read financial research linearly from top to bottom. They scan first: What is the rating? What is the 12-month target price? What are the key catalysts? Our <strong>Home Dashboard</strong> presents all memos as discrete cards with financial pills (Rating, Target, Upside, Read Time). The user chooses when to invest their attention.
-          </p>
-
-          <h3>B. Isolation of Deep Reading Focus</h3>
-          <p>
-            When reading a DCF valuation model with mathematical tables and margin trajectories, visual clutter is toxic to comprehension. Moving to a dedicated page clears out external distractions, activates the reading progress bar, and unlocks reading comfort tools (text scaling from A- to A+).
-          </p>
-
-          <h3>C. Shareability and Deep Linking</h3>
-          <p>
-            Every blog post has an individual slug and anchor hash (e.g. <code>#post-1</code> for Initiation, <code>#post-5</code> for the Bear Case). If our group wants to present our Bear Case in a university seminar, we can link directly to that specific slide or URL without forcing the audience to scroll past three unrelated articles.
-          </p>
-
-          <h3>D. Video & Image Asset Performance</h3>
-          <p>
-            Financial blogs frequently feature executive interviews (Hock Tan on CNBC) and heavy architectural diagrams (Tomahawk 5 spine-leaf topology). Stacking four full-length video players and multiple infographics onto a single continuous webpage slows down initial paint time and consumes significant bandwidth on mobile devices.
-          </p>
-
-          <h3>E. The Live Toggle Demonstration</h3>
-          <p>
-            To prove our thesis to our university evaluator, we built a live interactive toggle in the header: clicking <strong>"Scroll"</strong> renders all 4 articles sequentially, while clicking <strong>"Pages"</strong> isolates them. Testing both modes side-by-side demonstrates that Pages provide vastly superior readability and mental retention.
-          </p>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- VIEW 5: ABOUT THE ANALYST & TEAM -->
+    <!-- VIEW 4: ABOUT THE ANALYST & TEAM -->
     <div id="view-about" class="hidden">
       <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-10 mb-8 max-w-4xl mx-auto">
         <div class="border-b border-slate-200 pb-4 mb-6">
@@ -601,8 +507,7 @@
           <a href="#post-2" class="hover:text-white transition-colors">Broadcom ($540)</a>
           <a href="#post-3" class="hover:text-white transition-colors">AI Networking</a>
           <a href="#post-4" class="hover:text-white transition-colors">VMware Model</a>
-          <a href="#post-5" class="hover:text-white transition-colors">Bear Case</a>
-          <a href="#ux-rationale" class="hover:text-white transition-colors text-red-400">Pages vs Scroll UX</a>
+          <a href="#post-5" class="hover:text-white transition-colors">Bear Case</a>
           <a href="#about" class="hover:text-white transition-colors">About Team</a>
         </div>
       </div>
