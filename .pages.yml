@@ -8,6 +8,7 @@ content:
     type: collection
     path: content/articles-html
     format: json
+    filename: "{primary}.json"
     view:
       fields: [title, date, published]
       primary: title
@@ -110,6 +111,7 @@ content:
     type: collection
     path: content/articles
     format: json
+    filename: "{primary}.json"
     view:
       fields: [title, date, published]
       primary: title
