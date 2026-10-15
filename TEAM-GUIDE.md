@@ -42,7 +42,7 @@ Upload with the **Media** tab, then insert the image in the body.
 Four older draft posts (Initiation, AI Networking, VMware, Bear Case) are hidden, not deleted. They are the entries whose file names start with `archive-`. They still contain amber **PLACEHOLDER, VERIFY** claims, so verify those before ticking **Published** on any of them.
 
 ## Before submission: missing reference lists
-Posts 2 and 3 cite sources in the text, for example (Broadcom Inc., 2025, p. 48), (Broadcom, 2026b), (Wang et al., 2026) and (Reuters, 2026), but have no reference list at the end. Add one at the bottom of each article body.
+Posts 2 and 3 now end with a **References** section where every entry is an amber placeholder describing the source that is needed. Replace each placeholder with the full reference (author, date, title, URL), then delete the `<span class="placeholder-claim" ...>` and `</span>` around it.
 
 ## Publishing (site owner only)
 1. On GitHub, open https://github.com/jollytoxic/financial-autopsy-blog/compare/main...drafts
