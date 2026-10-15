@@ -1,7 +1,7 @@
 {
-  "id": "post-5",
-  "order": 5,
-  "published": true,
+  "id": "archive-bear-case",
+  "order": 14,
+  "published": false,
   "slug": "broadcom-risk-matrix-apple-antitrust-bear-case",
   "title": "Bear Case Stress-Test: Customer Concentration Risks, Apple RF Renewal, and Antitrust Clouds",
   "subtitle": "A rigorous risk analysis modeling downside scenarios: hyperscaler ASIC insourcing, Apple modem independence, and regulatory scrutiny.",

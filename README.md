@@ -15,7 +15,6 @@ This prototype models a high-end institutional equity research blog developed by
 ### The Analyst Persona: Julian Lim, CFA
 - **Background:** Lead Analyst covering the Semiconductor and Infrastructure Software sectors.
 - **Analytical Stance:** Institutional fundamental analysis, DCF financial modeling, hyperscaler capex tracking, and enterprise software pricing power.
-- **Coverage Verdict:** **STRONG BUY** with a 12-month base price target of **$540.00** (+51.6% upside from $356.26 as of 13 Oct 2026).
 
 ---
 
@@ -36,29 +35,13 @@ The prototype strictly incorporates Broadcom's corporate visual identity combine
 
 ---
 
-## 3. The 4 Mandatory Research Blog Posts (Summary)
+## 3. Published Posts
 
-The prototype contains 4 full-length, professionally written research notes accessible via both **Pages Mode** and **Continuous Scroll Mode**:
+1. **Welcome to The Financial Autopsy** (September 2026): why Julian started the blog and what readers can expect.
+2. **Broadcom (NASDAQ: AVGO): Anatomy of a Growth Machine** (September 2026): FY2025 financial statement analysis covering revenue mix, margins, the tax effect, cash flow, debt and ratios, with 5 figures and a calculations appendix. Figures live in `images/`.
+3. **Follow the Cash: What September and October Revealed About Broadcom's AI Growth** (October 2026): news analysis of Q3 results, new substrate capacity, customer financing, capital constraints and VMware HyperArmor.
 
-1. **Blog 1: Flagship Initiation & Valuation ($540 Bull Case)**
-   - *Title:* "Broadcom (NASDAQ: AVGO) Initiation: Why Custom Silicon (XPUs) & VMware Justify a $540 Bull Case"
-   - *Topics:* Dual-engine investment thesis, custom AI silicon (ASIC) moat vs. Nvidia GPUs, DCF model, and forward P/E multiple valuation.
-   - *Includes:* Segment revenue mix chart placeholder, financial valuation table, and executive video briefing placeholder.
-
-2. **Blog 2: Technical Deep Dive & AI Networking Run-Rate**
-   - *Title:* "Unpacking Broadcom's AI Run-Rate: When Tomahawk 5 & Optical Ethernet Outpace Merchant Silicon"
-   - *Topics:* 100,000-GPU cluster bottlenecks, Ultra Ethernet Consortium (UEC) vs. Nvidia InfiniBand, SerDes IP leadership, and 51.2 Tbps switching throughput.
-   - *Includes:* Spine-leaf interconnect fabric placeholder and lab benchmark video embed slot.
-
-3. **Blog 3: Corporate M&A Strategy & VMware Cash Flow Compounding**
-   - *Title:* "The Hock Tan Playbook: How VMware's Subscription Overhaul is Engineering 60%+ Operating Margins"
-   - *Topics:* Deconstructing the $69B acquisition, elimination of perpetual licenses, SKU consolidation to VMware Cloud Foundation (VCF), and debt deleveraging.
-   - *Includes:* Standalone vs. pro-forma margin comparison table and CIO enterprise switching cost podcast placeholder.
-
-4. **Blog 4: Risk Matrix & Bear Case Stress-Testing**
-   - *Title:* "Bear Case Stress-Test: Customer Concentration Risks, Apple RF Renewal, and Antitrust Clouds"
-   - *Topics:* Apple RF filter dependency (~18.5% of revenue), hyperscaler in-house silicon disintermediation (Google/Meta), EU antitrust complaints, and a $243 bear case.
-   - *Includes:* Customer concentration bar chart placeholder and regulatory panel discussion video slot.
+Four earlier draft posts (Initiation & Valuation, AI Networking, VMware, Bear Case) are kept in `content/articles-html/archive-*.json` with **Published** switched off. Tick Published in Pages CMS to bring one back.
 
 ---
 

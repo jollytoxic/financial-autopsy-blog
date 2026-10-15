@@ -1,7 +1,7 @@
 {
-  "id": "post-4",
-  "order": 4,
-  "published": true,
+  "id": "archive-vmware",
+  "order": 13,
+  "published": false,
   "slug": "vmware-hock-tan-playbook-margins-fcf",
   "title": "The Hock Tan Playbook: How VMware's Subscription Overhaul is Engineering 60%+ Operating Margins",
   "subtitle": "Analyzing the controversial yet brutally effective enterprise software transformation: perpetual license elimination, bundling, and cash flow compounding.",

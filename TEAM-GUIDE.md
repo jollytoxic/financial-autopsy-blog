@@ -34,27 +34,15 @@ Untick **Published** and Save. Tick it again to bring the article back.
 ## Images
 Upload with the **Media** tab, then insert the image in the body.
 
-## Prices and valuation (as of 13 Oct 2026)
-All prices, targets and multiples were updated from Yahoo Finance on 13 Oct 2026:
-- Price $356.26, 12-month target $540 (+51.6%), bear case $243 (-31.8%).
-- Target = 50/50 blend of a DCF ($537) and 28x FY2027 consensus EPS of $19.39 ($543). Details are in the Initiation memo, section 3.
+## What is published
+1. Welcome to The Financial Autopsy
+2. Broadcom (NASDAQ: AVGO): Anatomy of a Growth Machine (5 figures in the Media tab)
+3. Follow the Cash: What September and October Revealed About Broadcom's AI Growth
 
-If you refresh the prices, update the **Current price** and **Price date** fields in every article, plus the numbers in the memo text.
+Four older draft posts (Initiation, AI Networking, VMware, Bear Case) are hidden, not deleted. They are the entries whose file names start with `archive-`. They still contain amber **PLACEHOLDER, VERIFY** claims, so verify those before ticking **Published** on any of them.
 
-## Placeholders to verify (amber highlight)
-Some claims could not be checked against a source. They are shown on the site with an amber highlight and a **PLACEHOLDER, VERIFY** label, so readers know they are not confirmed yet. These are placeholders for the team to fill in, not checked facts.
-
-| Article | Placeholder |
-|---|---|
-| Initiation memo | ASIC run-rate "exceeding $14B+"; software gross margins "north of 74%"; "over 80% of Fortune 500 enterprises" |
-| AI Networking | GPUs idle "up to 35% of compute cycles"; power cut "by over 30%"; networking revenue "+43% year-over-year"; networking margins "above 75%" |
-| VMware Model | operating margins 28.4% / 48.2% / 62.0%+; "$12B+ EBITDA"; net debt "peaked near $73 billion"; "target 2.5x gross debt-to-EBITDA" |
-| Bear Case | customers "over 35%" of revenue; Apple "roughly 20%"; Apple ~18.5%, Hyperscaler A ~11.0%, Hyperscaler B ~7.5%, top 3 ~37%; AI growth "from 30%+" |
-| Top ticker bar | VMware ARR run-rate $12.4B (ask the site owner, it's in `index.html`) |
-
-**To fix one:** in the article body, find the text inside
-`<span class="placeholder-claim" title="...">THE CLAIM</span>`.
-Replace THE CLAIM with the verified figure, then delete the opening `<span ...>` and the closing `</span>` around it. The highlight disappears. Keep a note of your source.
+## Before submission: missing reference lists
+Posts 2 and 3 cite sources in the text, for example (Broadcom Inc., 2025, p. 48), (Broadcom, 2026b), (Wang et al., 2026) and (Reuters, 2026), but have no reference list at the end. Add one at the bottom of each article body.
 
 ## Publishing (site owner only)
 1. On GitHub, open https://github.com/jollytoxic/financial-autopsy-blog/compare/main...drafts
